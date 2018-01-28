@@ -1,5 +1,6 @@
 package com.hencoder.hencoderpracticedraw1;
 
+
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
-    ViewPager pager;
+    ViewPager    pager;
     List<PageModel> pageModels = new ArrayList<>();
 
     {
