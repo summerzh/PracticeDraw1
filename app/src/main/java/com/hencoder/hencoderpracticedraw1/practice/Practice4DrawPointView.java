@@ -35,6 +35,10 @@ public class Practice4DrawPointView extends View {
 //        圆点和方点的切换使用 paint.setStrokeCap(cap)：`ROUND` 是圆点，`BUTT` 或 `SQUARE` 是方点
 
         // 注意画点要设置宽度,否则没有效果
+        // 画点不需要设置setStyle,画直线也不需要.因为点和直线可以理解为圆和长方体的缩小版,
+        // 画点的方法中并没有半径的参数,画直线的方法中没左上右下个点的坐标,
+        // 所以点和直线是没有宽度只有长度的图形,所以设置style是实心和空心就没有意义,
+        // 只能通过setStrokeWidth改变点和直线的大小和粗细
         mPaint.setStrokeWidth(DpUtils.dip2px(mContext, 20));
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         canvas.drawPoint(500, 200, mPaint);

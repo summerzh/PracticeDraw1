@@ -9,6 +9,7 @@ import android.view.View;
 
 public class Practice6DrawLineView extends View {
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private float[] mLines = new float[]{400, 200, 600, 400, 597, 400,1000, 400};
 
 
     public Practice6DrawLineView(Context context) {
@@ -30,7 +31,11 @@ public class Practice6DrawLineView extends View {
 //        练习内容：使用 canvas.drawLine() 方法画直线
 
         mPaint.setStrokeWidth(10);
-        canvas.drawLine(400, 200, 600, 400, mPaint);
-        canvas.drawLine(600, 400, 1000, 400, mPaint);
+        mPaint.setStrokeJoin(Paint.Join.ROUND);
+        // 斜着的两条直线之间会有缝隙,可以通过是两条之间重合一点,消除缝隙
+//        canvas.drawLine(400, 200, 600, 400, mPaint);
+//        canvas.drawLine(600, 400, 1000, 400, mPaint);
+
+        canvas.drawLines(mLines, mPaint);
     }
 }
